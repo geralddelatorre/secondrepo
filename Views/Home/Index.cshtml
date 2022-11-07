@@ -1,0 +1,56 @@
+﻿@{
+        ViewData["Title"] = "Home Page";
+        string[] TableHeaders = new string[]
+        {
+            
+            "Order No"
+           ,"Order Date"
+           ,"Customer Name"
+           ,"Total Amount"
+    };
+}
+
+<div class="text-center">
+    <h4>List of Orders</h4>
+</div>
+    <div class="text-center">
+        <div class=" table " align="center">
+            <table class=" table table-bordered table-hover ">
+                <thead>
+                    <tr>
+                        @foreach (var head in TableHeaders)
+                        {
+                            <th>
+                                @head
+                            </th>
+                        }
+                    </tr>
+                </thead>
+               
+
+                <tbody>
+                    <form action =" " method="">
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var data in Model)
+                                {
+
+                                <tr>
+
+                                    <td><a id=" id_a" href="Home/Privacy?id=@data.orderno" onclick="btnClick()" >@data.orderno</a></td>
+
+                                    <td>@data.orderdate</td>
+                                    <td>@data.customername</td>
+                                    <td>@data.totalamount</td>
+
+
+                                </tr>
+                            }
+                        }
+                        }
+                        </form>
+                    </tbody>
+            </table>
+        </div>
+    </div>

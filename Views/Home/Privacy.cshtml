@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Order Details";
+   
+}
+<div class="text-center">
+    <h4>Order Details</h4>
+    
+</div>
+
+
+  
+<div class="text-center">
+
+
+    @{
+        string datess = this.Url.ToString();
+
+        if (Model != null)
+        {
+            foreach (var datas in Model)
+            {
+                
+                <h5>Order No:</h5><input type="text" id=" orid" value=" @datas.orderno" enable=" false" />
+                <h5>Order Date:</h5><input type="text" id=" ordate" value=" @datas.orderdate" enable=" false" />
+                <h5>Customer Name:</h5><input type="text" id=" cusname" value=" @datas.customername" enable=" false" />
+                <h5>Total Amount:</h5><input type="text" id=" orid" value=" @datas.totalamount" enable=" false" /> <br /><br />
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><input type="button" id=" back_btn" value=" Back" /></a>
+
+
+
+            }
+
+        }
+    }
+
+
+
+
+</div>
